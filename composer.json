@@ -1,0 +1,36 @@
+{
+    "name": "codedge/statamic-here-maps",
+    "description": "Display HERE maps in Statamic",
+    "type": "statamic-addon",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Holger Lösken",
+            "email": "holger.loesken@codedge.de"
+        }
+    ],
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "statamic/cms": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codedge\\HereMaps\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Codedge\\HereMaps\\ServiceProvider"
+            ]
+        },
+        "statamic": {
+            "name": "HereMaps",
+            "description": "Display HERE maps"
+        }
+    }
+}

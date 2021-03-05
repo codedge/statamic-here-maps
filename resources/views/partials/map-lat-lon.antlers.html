@@ -1,0 +1,30 @@
+{{ scripts }}
+<script>
+    const platform = new H.service.Platform({ apikey: '{{ apiKey }}' });
+    const defaultLayers = platform.createDefaultLayers();
+    const map = new H.Map(document.getElementById('{{ container }}'),
+        defaultLayers.vector.normal.map, {
+            center: {
+                lat: {{ lat }},
+                lng: {{ lon }},
+            },
+            zoom: {{ zoom }},
+            pixelRatio: window.devicePixelRatio || 1
+        });
+    window.addEventListener('resize', () => map.getViewPort().resize());
+    const behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+    const ui = H.ui.UI.createDefault(map, defaultLayers);
+
+    {{ if marker }}
+    addMarker(map);
+
+    function addMarker(map) {
+        var lmarker = new H.map.Marker({
+            lat: {{ lat }},
+            lng: {{ lon }},
+        });
+
+        map.addObject(lmarker);
+    }
+    {{ /if }}
+</script>
