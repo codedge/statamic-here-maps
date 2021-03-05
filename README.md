@@ -22,4 +22,4 @@ See [documentation](DOCUMENTATION.md) for more details.
 ## License
 
 Before going into production with *Statamic HERE Maps*, you need to buy a licence at the [Statamic Marketplace](https://statamic.com/addons/codedge/statamic-here-maps).
-*Statamic MagicLink* is not free software!
+*Statamic HERE Maps* is not free software!
