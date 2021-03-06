@@ -1,7 +1,7 @@
 {
     "name": "codedge/statamic-here-maps",
-    "description": "Display HERE maps in Statamic",
     "type": "statamic-addon",
+    "description": "Display HERE maps in Statamic",
     "license": "proprietary",
     "authors": [
         {
@@ -9,10 +9,6 @@
             "email": "holger.loesken@codedge.de"
         }
     ],
-    "config": {
-        "process-timeout": 0,
-        "sort-packages": true
-    },
     "require": {
         "php": "^7.4 || ^8.0",
         "statamic/cms": "^3.0"
@@ -20,6 +16,21 @@
     "require-dev": {
         "orchestra/testbench": "^6.13.0",
         "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Codedge\\HereMaps\\ServiceProvider"
+            ]
+        },
+        "statamic": {
+            "description": "Display HERE maps",
+            "name": "HereMaps"
+        }
     },
     "autoload": {
         "psr-4": {
@@ -33,18 +44,7 @@
     },
     "scripts": {
         "test": "./vendor/bin/phpunit --debug --testdox",
-        "test-coverage": "./vendor/bin/phpunit --coverage-html coverage",
-        "test-clover-coverage": "./vendor/bin/phpunit --coverage-clover clover.xml"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Codedge\\HereMaps\\ServiceProvider"
-            ]
-        },
-        "statamic": {
-            "name": "HereMaps",
-            "description": "Display HERE maps"
-        }
+        "test-clover-coverage": "./vendor/bin/phpunit --coverage-clover clover.xml",
+        "test-coverage": "./vendor/bin/phpunit --coverage-html coverage"
     }
 }
