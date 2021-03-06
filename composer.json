@@ -17,10 +17,24 @@
         "php": "^7.4 || ^8.0",
         "statamic/cms": "^3.0"
     },
+    "require-dev": {
+        "orchestra/testbench": "^6.13.0",
+        "phpunit/phpunit": "^9.5"
+    },
     "autoload": {
         "psr-4": {
             "Codedge\\HereMaps\\": "src"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Codedge\\HereMaps\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit --debug --testdox",
+        "test-coverage": "./vendor/bin/phpunit --coverage-html coverage",
+        "test-clover-coverage": "./vendor/bin/phpunit --coverage-clover clover.xml"
     },
     "extra": {
         "laravel": {
